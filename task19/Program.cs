@@ -4,28 +4,59 @@
 // 12821 -> да
 // 23432 -> да
 
-string ReadInt(string text)
+// строковый метод
+// string ReadInt(string text)
+// {
+//     Console.WriteLine(text);
+//     return Console.ReadLine();
+// }
+
+// void Pallindrome(string num)
+// {
+//     if (num[0] == num[4] && num[1] == num[3])
+//     {
+//         Console.WriteLine($"{num} -> да");
+//     }
+//     else
+//     {
+//         Console.WriteLine($"{num} -> нет");
+//     }
+// }
+
+// string number = ReadInt("Введите пятизначное число: ");
+// if (number.Length == 5)
+// {
+//    Pallindrome(number);
+// }
+// else
+// {
+//     Console.WriteLine("Введено не пятизначное число.");
+// }
+
+// математический метод
+int ReadInt(string text)
 {
-    Console.WriteLine(text);
-    return Console.ReadLine()!;
+    Console.Write(text);
+    return Convert.ToInt32(Console.ReadLine()!);
 }
 
-void Pallindrome(string num)
+void Pallindrome(int number)
 {
-    if (num[0] == num[4] && num[1] == num[3])
+    if (number/10000 == number%10 && number/1000%10 == number/10%10)
     {
-        Console.WriteLine($"{num} -> да");
+        Console.WriteLine($"{number} -> да");
     }
     else
     {
-        Console.WriteLine($"{num} -> нет");
+        Console.WriteLine($"{number} -> нет");
     }
 }
 
-string number = ReadInt("Введите пятизначное число: ");
-if (number.Length == 5)
+int num = ReadInt("Введите пятизначное число: ");
+
+if (num >= 10000 && num <= 99999)
 {
-   Pallindrome(number);
+    Pallindrome(num);
 }
 else
 {
